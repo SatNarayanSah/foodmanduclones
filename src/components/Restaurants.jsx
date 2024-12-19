@@ -30,13 +30,13 @@ const Restaurants = () => {
 
   return (
     <div>
-      <div className="p-8 bg-slate-100 flex justify-between">
-        <p className="text-4xl">Restaurants and stores</p>
+      <div className="p-4 sm:p-8 bg-slate-100 flex flex-col sm:flex-row justify-between gap-4">
+        <p className="text-2xl sm:text-4xl">Restaurants and stores</p>
         <div
           onClick={() => {
             setShow(!show);
           }}
-          className="flex items-center gap-2  p-2 border-2 w-fit bg-white"
+          className="flex items-center gap-2 p-2 border-2 w-fit bg-white cursor-pointer"
         >
           Pokhara
           <BsArrowDown />
@@ -44,7 +44,7 @@ const Restaurants = () => {
       </div>
 
       {show && (
-        <ul className="border-2 w-fit  absolute right-8 top-[170px] bg-white">
+        <ul className="border-2 w-fit absolute right-4 sm:right-8 top-[140px] sm:top-[170px] bg-white z-50">
           <li
             onClick={() => {
               localStorage.setItem("latitude", 27.7026754);
@@ -81,7 +81,7 @@ const Restaurants = () => {
         </ul>
       )}
 
-      <div className="flex justify-center items-center gap-8 flex-wrap mx-8 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8 p-4 sm:p-8">
         {restaurants.map((data) => (
           <Card propData={data} key={data.Id} />
         ))}

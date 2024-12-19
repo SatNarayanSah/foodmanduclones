@@ -25,14 +25,14 @@ const Home = () => {
   return (
     <div>
       <div className="relative">
-        <img src={backgroundimage} className="h-[800px] w-full" />
-        <div className="text-lg flex-col absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-          <p className="font-bold">Order food from the widest range of</p>
-          <p className="font-bold">restaurants.</p>
+        <img src={backgroundimage} className="h-[400px] md:h-[600px] lg:h-[800px] w-full object-cover" />
+        <div className="text-lg flex-col absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4">
+          <p className="font-bold text-center">Order food from the widest range of</p>
+          <p className="font-bold text-center">restaurants.</p>
 
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full max-w-xl px-4">
             <input
-              className="p-4 w-96 rounded-xl"
+              className="p-4 w-full rounded-xl"
               placeholder="Restaurants or cuisine"
               onChange={(e) => {
                 setQuery(e.target.value);
@@ -45,22 +45,21 @@ const Home = () => {
               }}
             />
             <Link to={"/restaurants?query=" + query}>
-              <button className="bg-[#FFDD00] p-4 rounded-xl">
+              <button className="bg-[#FFDD00] p-4 rounded-xl w-full sm:w-auto">
                 Find Restaurants
               </button>
             </Link>
-         
           </div>
         </div>
       </div>
-      <div className=" mx-8 flex justify-between py-4">
-        <p className="font-bold text-xl">FEATURED RESTAURANTS</p>
-        <Link to="restaurants" className="flex items-center font-bold text-xl">
+      <div className="mx-4 sm:mx-8 flex justify-between py-4">
+        <p className="font-bold text-lg sm:text-xl">FEATURED RESTAURANTS</p>
+        <Link to="restaurants" className="flex items-center font-bold text-lg sm:text-xl">
           View All
           <FaArrowRight className="ml-4" />
         </Link>
       </div>
-      <div className="flex flex-wrap gap-8 items-center justify-center my-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-8 px-4 sm:px-8 my-4">
         {restaurantData.map((data) => (
           <Card key={data.Id} propData={data} />
         ))}

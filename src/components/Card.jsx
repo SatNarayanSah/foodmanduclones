@@ -21,21 +21,21 @@ const Card = (props) => {
       onClick={() => {
         navigate("/restaurants/details/" + Id);
       }}
-      className=" h-80 w-96 border-[1px] shadow-md border-black  rounded-md"
+      className="w-full sm:w-[340px] h-auto border-[1px] shadow-md border-black rounded-md"
     >
       <img
-        className="h-1/2 w-full rounded-md"
+        className="h-48 w-full rounded-t-md object-cover"
         src={VendorListingWebImageName}
         alt=""
       />
       <div className="flex flex-col gap-1 p-4">
-        <p>{Name}</p>
-        <div className="flex gap-4">
-          <div className="flex items-center">
+        <p className="text-lg font-semibold">{Name}</p>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
+          <div className="flex items-center gap-1">
             <RiMapPin2Fill />
             {Address1}
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-1">
             <MdPedalBike />
             {DeliveryDistanceStr}
           </div>

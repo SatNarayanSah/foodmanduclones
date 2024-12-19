@@ -58,18 +58,18 @@ const RestaurantDetail = () => {
         <img
           src={vendorData.VendorCoverImageName}
           alt=""
-          className="h-[512px] w-full bg-cover"
+          className="h-[300px] sm:h-[400px] lg:h-[512px] w-full object-cover"
         />
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
 
-        <div className="container absolute bottom-14 right-0">
-          <div className="flex gap-4 ">
+        <div className="absolute bottom-4 sm:bottom-14 left-4 right-4">
+          <div className="flex gap-4">
             <img
               src={vendorData.VendorLogoImageName}
               alt=""
-              className="h-32 w-22"
+              className="h-20 sm:h-32 w-auto object-contain"
             />
-            <div className="text-xl text-white flex flex-col gap-2 justify-center">
+            <div className="text-base sm:text-xl text-white flex flex-col gap-2 justify-center">
               <div className="flex gap-2">
                 <IoFastFood />
                 <p className="text-white">{vendorData.ShortName}</p>
@@ -100,7 +100,7 @@ const RestaurantDetail = () => {
       </div>
 
       <div className="flex justify-center items-center w-full py-2">
-        <div className="w-[900px]">
+        <div className="w-full max-w-[900px] px-4">
           {categoryData.map((data) => (
             <div key={data.categoryId} className="w-full p-4">
               <div className="flex justify-between bg-gray-200 p-4 text-xl">
